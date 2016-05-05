@@ -43,8 +43,8 @@ try:
             for char in digit[row]:
                 if char == "*":
                     line += str(number)
-                else:
-                    line += " "
+                #else:
+                line += " "
             #line += digit[row] + " "  # line формирует линию звездочек для всех цифр через пробел
             column += 1  # переходим к следующей цифре введеного числа
         print(line)  # печатаем очередную строчку звездочек для всех цифр в числе
