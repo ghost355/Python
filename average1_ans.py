@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # программа для подсчета списка введеных чисел
 
-count = 0 # инициализация переменных
+# инициализация переменных
 summ = 0
 num_list = []
 highest = None # Значение None для присвоения  первого значения как  исходного для сравнения
@@ -16,7 +16,6 @@ while True:
                 print(err)
                 continue  # после ошибки продолжаем цикл!
             num_list.append(number)
-            count += 1
             summ += number
             if highest is None or number >= highest: # сравниваем  на больше меньше и присваиваем нужное значение
                 highest = number
@@ -24,6 +23,7 @@ while True:
                 lowest = number
         else:
              break
-if count:
+count = len(num_list)
+if num_list:
     print ("numbers:",num_list)
     print ("count =", count, "sum =", summ, "lowest =", lowest, "highest  =", highest, "mean =", summ/count)
