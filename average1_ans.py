@@ -4,23 +4,23 @@
 count = 0 # инициализация переменных
 summ = 0
 num_list = []
-highest = 0
-lowest = 0
+highest = None # Значение None для присвоения  первого значения как  исходного для сравнения
+lowest = None
 
 while True:
-        line = input("Input a number or press Enter to finish: ")
+        line = input("Input a number or press Enter to finish: ")  # вводим число
         if line:
             try:
-                number = int(line)
+                number = int(line)  # переводим в число,проверяем на правильность, присваиваем
             except ValueError as err:
                 print(err)
-                continue
-            num_list += line
+                continue  # после ошибки продолжаем цикл!
+            num_list.append(number)
             count += 1
             summ += number
-            if number >= highest:
+            if highest is None or number >= highest: # сравниваем  на больше меньше и присваиваем нужное значение
                 highest = number
-            if lowest is 0 or number <= lowest:
+            if lowest is None or number <= lowest:
                 lowest = number
         else:
              break
