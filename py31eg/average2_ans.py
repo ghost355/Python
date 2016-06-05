@@ -9,21 +9,22 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 # General Public License for more details.
 
-numbers = []
-indexes = []
+numbers = []#для списка чисел
+indexes = []#для индексов списка чисел
 total = 0
 lowest = None
 highest = None
 
 while True:
     try:
-        line = input("enter a number or Enter to finish: ")
+        line = input("enter a number or Enter to finish: ")# вводим числа в список чисел
         if not line:
             break
-        indexes.append(len(numbers))
-        number = int(line)
-        numbers.append(number)
-        total += number
+        indexes.append(len(numbers))    #  добавляем в список индексов длину списка (первый = 0)
+        #  так как список пустой еще
+        number = int(line)              #  переводим введеное число из строки в целое число
+        numbers.append(number)          #  добавляем число в список numbers
+        total += number                 #  увеличиваем счетчик введеных чисел
         if lowest is None or lowest > number:
             lowest = number
         if highest is None or highest < number:
@@ -31,11 +32,11 @@ while True:
     except ValueError as err:
         print(err)
 
-swapped = True
+swapped = True #инициализировали переменную цикла
 while swapped:
-    swapped = False
-    for index in indexes:
-        if index + 1 == len(numbers):
+    swapped = False # условие выхода из цикла - если не выполняются условия в цикле for
+    for index in indexes:               #  цикл перебором списка индексов
+        if index + 1 == len(numbers):   #  цикл прекратится если  достигнуто предпоследнее число в списке
             break
         if numbers[index] > numbers[index + 1]:
             temp = numbers[index]
